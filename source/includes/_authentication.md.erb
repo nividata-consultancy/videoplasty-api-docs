@@ -1,0 +1,70 @@
+# Authentication
+
+VideoPlasty API uses oAuth based Authentication via short-lived Bearer tokens. You can either create a new one or refresh existing token.
+
+## Create or Refresh a Token
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+```
+
+```shell
+curl --request POST \
+  --url <%= config[:domain] %>/spree_oauth/token \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "grant_type": "password",
+  "username": "spree@example.com",
+  "password": "spree123"
+}'
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "access_token": "SfM3k8kq5Wkc6xz6rgMlsl-mbygJ1ptq4DR0Ah51vjA",
+  "token_type": "Bearer",
+  "expires_in": 7200,
+  "refresh_token": "SqJDIwX00fehqHxS6xmb-kzqAlrYe_0EHgekMexVT8k",
+  "created_at": 1581873931
+}
+```
+
+### HTTP Request
+
+<code class="http-request">
+  <span class="http-method-post">POST</span>
+  <%= config[:domain] %>/spree_oauth/token
+</code>
+
+This endpoint creates a new Bearer Token or refreshes an existing Bearer Token.
+
+The `token` found in the response body is required to authorize API calls.
+
+### Request Body
+<p>
+  <span class="request-body">
+  {
+    "grant_type": "password",
+    "username": "spree@example.com",
+    "password": "spree123"
+  }
+  </span>
+</p>

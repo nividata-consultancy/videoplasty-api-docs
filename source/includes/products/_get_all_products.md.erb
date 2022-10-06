@@ -1,0 +1,1547 @@
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get()
+```
+
+```shell
+curl --request GET \\
+  --url <%= config[:domain] %>/api/v2/storefront/products \\
+  --header 'Content-Type: application/json'
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let kittens = api.kittens.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "96",
+      "type": "product",
+      "attributes": {
+        "name": "Bomber Jacket",
+        "description": "Dolorem nulla odit nostrum placeat soluta non vitae praesentium. Neque asperiores quos necessitatibus sint placeat. Voluptas aliquid atque veniam iste assumenda blanditiis. Excepturi odit recusandae laboriosam sunt temporibus corrupti. Tempore necessitatibus recusandae eligendi occaecati nesciunt sed illum similique.",
+        "available_on": "2021-10-02T11:02:29.288Z",
+        "slug": "bomber-jacket",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:14.681Z",
+        "sku": "JacketsandCoats_bomberjacket_38.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "38.99",
+        "display_price": "$38.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "212",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "639",
+              "type": "product_property"
+            },
+            {
+              "id": "640",
+              "type": "product_property"
+            },
+            {
+              "id": "641",
+              "type": "product_property"
+            },
+            {
+              "id": "642",
+              "type": "product_property"
+            },
+            {
+              "id": "643",
+              "type": "product_property"
+            },
+            {
+              "id": "644",
+              "type": "product_property"
+            },
+            {
+              "id": "645",
+              "type": "product_property"
+            },
+            {
+              "id": "646",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "19",
+              "type": "taxon"
+            },
+            {
+              "id": "14",
+              "type": "taxon"
+            },
+            {
+              "id": "24",
+              "type": "taxon"
+            },
+            {
+              "id": "3",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "212",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "96",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "97",
+      "type": "product",
+      "attributes": {
+        "name": "Sports Bra Low Support",
+        "description": "Consequuntur deserunt ex asperiores maiores repudiandae tenetur. Recusandae labore cupiditate aliquid voluptatibus at. Culpa repellendus veritatis ad aliquam eligendi reprehenderit corporis.",
+        "available_on": "2021-10-02T11:02:29.414Z",
+        "slug": "sports-bra-low-support",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:14.710Z",
+        "sku": "Tops_sportsbralowsupport_61.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "61.99",
+        "display_price": "$61.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "213",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "647",
+              "type": "product_property"
+            },
+            {
+              "id": "648",
+              "type": "product_property"
+            },
+            {
+              "id": "649",
+              "type": "product_property"
+            },
+            {
+              "id": "650",
+              "type": "product_property"
+            },
+            {
+              "id": "651",
+              "type": "product_property"
+            },
+            {
+              "id": "652",
+              "type": "product_property"
+            },
+            {
+              "id": "653",
+              "type": "product_property"
+            },
+            {
+              "id": "654",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "19",
+              "type": "taxon"
+            },
+            {
+              "id": "4",
+              "type": "taxon"
+            },
+            {
+              "id": "15",
+              "type": "taxon"
+            },
+            {
+              "id": "20",
+              "type": "taxon"
+            },
+            {
+              "id": "18",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "213",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "97",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "48",
+      "type": "product",
+      "attributes": {
+        "name": "Flared Dress",
+        "description": "Ut ullam aspernatur facere dicta explicabo sed. Molestiae nihil atque sed voluptatibus officiis. Aspernatur vitae nesciunt non doloremque. Officiis velit et magnam molestias repellat. Asperiores modi totam labore iure aperiam sequi.",
+        "available_on": "2021-10-02T11:02:23.076Z",
+        "slug": "flared-dress",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:13.159Z",
+        "sku": "Dresses_flareddress_21.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "21.99",
+        "display_price": "$21.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "164",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "2",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "387",
+              "type": "product_property"
+            },
+            {
+              "id": "388",
+              "type": "product_property"
+            },
+            {
+              "id": "389",
+              "type": "product_property"
+            },
+            {
+              "id": "390",
+              "type": "product_property"
+            },
+            {
+              "id": "391",
+              "type": "product_property"
+            },
+            {
+              "id": "392",
+              "type": "product_property"
+            },
+            {
+              "id": "393",
+              "type": "product_property"
+            },
+            {
+              "id": "394",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "22",
+              "type": "taxon"
+            },
+            {
+              "id": "18",
+              "type": "taxon"
+            },
+            {
+              "id": "10",
+              "type": "taxon"
+            },
+            {
+              "id": "24",
+              "type": "taxon"
+            },
+            {
+              "id": "3",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "164",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "48",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "115",
+      "type": "product",
+      "attributes": {
+        "name": "High Waist Pants With Pockets",
+        "description": "Doloribus ipsam beatae porro aspernatur officiis aperiam. Sapiente quos commodi vitae incidunt. Architecto ducimus iste sed laudantium.",
+        "available_on": "2021-10-02T11:02:31.782Z",
+        "slug": "high-waist-pants-with-pockets",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:11.537Z",
+        "sku": "Pants_highwaistpantswithpockets_69.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "69.99",
+        "display_price": "$69.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "231",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "775",
+              "type": "product_property"
+            },
+            {
+              "id": "776",
+              "type": "product_property"
+            },
+            {
+              "id": "777",
+              "type": "product_property"
+            },
+            {
+              "id": "778",
+              "type": "product_property"
+            },
+            {
+              "id": "779",
+              "type": "product_property"
+            },
+            {
+              "id": "780",
+              "type": "product_property"
+            },
+            {
+              "id": "781",
+              "type": "product_property"
+            },
+            {
+              "id": "782",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "17",
+              "type": "taxon"
+            },
+            {
+              "id": "4",
+              "type": "taxon"
+            },
+            {
+              "id": "20",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "231",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "115",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "94",
+      "type": "product",
+      "attributes": {
+        "name": "Wool Blend Coat With Belt",
+        "description": "Aspernatur aperiam est id odio rerum eveniet optio. Aspernatur odio quisquam soluta explicabo. Numquam ipsam sint magni ducimus eum. Voluptas excepturi tenetur optio culpa asperiores facilis sapiente.",
+        "available_on": "2021-10-02T11:02:29.039Z",
+        "slug": "wool-blend-coat-with-belt",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:14.622Z",
+        "sku": "JacketsandCoats_wool-blendcoatwithbelt_30.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "30.99",
+        "display_price": "$30.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "210",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "623",
+              "type": "product_property"
+            },
+            {
+              "id": "624",
+              "type": "product_property"
+            },
+            {
+              "id": "625",
+              "type": "product_property"
+            },
+            {
+              "id": "626",
+              "type": "product_property"
+            },
+            {
+              "id": "627",
+              "type": "product_property"
+            },
+            {
+              "id": "628",
+              "type": "product_property"
+            },
+            {
+              "id": "629",
+              "type": "product_property"
+            },
+            {
+              "id": "630",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "14",
+              "type": "taxon"
+            },
+            {
+              "id": "24",
+              "type": "taxon"
+            },
+            {
+              "id": "3",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "210",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "94",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "4",
+      "type": "product",
+      "attributes": {
+        "name": "Slim Fit Shirt",
+        "description": "Quidem accusamus similique blanditiis dolores corrupti. Laborum sed facere a expedita porro. Aperiam sint aspernatur eos dolore quod suscipit. Repudiandae tempore dolorum itaque repellat rerum doloremque cupiditate.",
+        "available_on": "2021-10-02T11:02:17.586Z",
+        "slug": "slim-fit-shirt",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:11.806Z",
+        "sku": "Shirts_slimfitshirt_62.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "62.99",
+        "display_price": "$62.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "120",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "153",
+              "type": "product_property"
+            },
+            {
+              "id": "154",
+              "type": "product_property"
+            },
+            {
+              "id": "155",
+              "type": "product_property"
+            },
+            {
+              "id": "156",
+              "type": "product_property"
+            },
+            {
+              "id": "157",
+              "type": "product_property"
+            },
+            {
+              "id": "158",
+              "type": "product_property"
+            },
+            {
+              "id": "159",
+              "type": "product_property"
+            },
+            {
+              "id": "160",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "19",
+              "type": "taxon"
+            },
+            {
+              "id": "5",
+              "type": "taxon"
+            },
+            {
+              "id": "2",
+              "type": "taxon"
+            },
+            {
+              "id": "24",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "120",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "4",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "106",
+      "type": "product",
+      "attributes": {
+        "name": "Lightweight Running Jacket",
+        "description": "Ipsum dolorum quo fugit reiciendis quae cupiditate. Quas incidunt adipisci iure quasi quaerat in laborum animi. Quo molestiae aperiam officiis provident voluptates a nesciunt.",
+        "available_on": "2021-10-02T11:02:30.674Z",
+        "slug": "Lightweight-running-jacket",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:14.967Z",
+        "sku": "Sweatshirts_Lightweightrunningjacket_10.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "10.99",
+        "display_price": "$10.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "222",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "703",
+              "type": "product_property"
+            },
+            {
+              "id": "704",
+              "type": "product_property"
+            },
+            {
+              "id": "705",
+              "type": "product_property"
+            },
+            {
+              "id": "706",
+              "type": "product_property"
+            },
+            {
+              "id": "707",
+              "type": "product_property"
+            },
+            {
+              "id": "708",
+              "type": "product_property"
+            },
+            {
+              "id": "709",
+              "type": "product_property"
+            },
+            {
+              "id": "710",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "16",
+              "type": "taxon"
+            },
+            {
+              "id": "4",
+              "type": "taxon"
+            },
+            {
+              "id": "24",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "222",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "106",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "21",
+      "type": "product",
+      "attributes": {
+        "name": "Stripped Jumper",
+        "description": "Placeat nemo vel molestiae sequi totam optio. Eaque distinctio incidunt blanditiis saepe voluptate. Ullam officia est nobis dolor. Facilis quam voluptas provident vero dolores. Nam consequuntur velit dolores recusandae excepturi veniam.",
+        "available_on": "2021-10-02T11:02:19.687Z",
+        "slug": "stripped-jumper",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:12.299Z",
+        "sku": "Sweaters_strippedjumper_84.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "84.99",
+        "display_price": "$84.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "137",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "211",
+              "type": "product_property"
+            },
+            {
+              "id": "212",
+              "type": "product_property"
+            },
+            {
+              "id": "213",
+              "type": "product_property"
+            },
+            {
+              "id": "214",
+              "type": "product_property"
+            },
+            {
+              "id": "215",
+              "type": "product_property"
+            },
+            {
+              "id": "216",
+              "type": "product_property"
+            },
+            {
+              "id": "217",
+              "type": "product_property"
+            },
+            {
+              "id": "218",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "22",
+              "type": "taxon"
+            },
+            {
+              "id": "19",
+              "type": "taxon"
+            },
+            {
+              "id": "2",
+              "type": "taxon"
+            },
+            {
+              "id": "7",
+              "type": "taxon"
+            },
+            {
+              "id": "24",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "137",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "21",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "25",
+      "type": "product",
+      "attributes": {
+        "name": "Hoodie",
+        "description": "Harum iusto atque consequuntur rem. Dolor incidunt quae eveniet sequi tempore illo unde quia. Quos aperiam incidunt doloribus eum amet animi. Saepe rerum dolorum molestias eos.",
+        "available_on": "2021-10-02T11:02:20.175Z",
+        "slug": "hoodie",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:12.418Z",
+        "sku": "Sweaters_hoodie_17.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "17.99",
+        "display_price": "$17.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "141",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "243",
+              "type": "product_property"
+            },
+            {
+              "id": "244",
+              "type": "product_property"
+            },
+            {
+              "id": "245",
+              "type": "product_property"
+            },
+            {
+              "id": "246",
+              "type": "product_property"
+            },
+            {
+              "id": "247",
+              "type": "product_property"
+            },
+            {
+              "id": "248",
+              "type": "product_property"
+            },
+            {
+              "id": "249",
+              "type": "product_property"
+            },
+            {
+              "id": "250",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "2",
+              "type": "taxon"
+            },
+            {
+              "id": "7",
+              "type": "taxon"
+            },
+            {
+              "id": "26",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "141",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "25",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "66",
+      "type": "product",
+      "attributes": {
+        "name": "Floral Shirt",
+        "description": "Veritatis alias dolores accusamus quaerat ipsa. Ab quibusdam provident necessitatibus deserunt rerum. Eaque laborum ducimus labore earum aspernatur sit nisi. Soluta amet earum provident blanditiis ut quibusdam facilis labore. Nihil commodi eaque assumenda quibusdam debitis autem laborum.",
+        "available_on": "2021-10-02T11:02:25.553Z",
+        "slug": "floral-shirt",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:13.668Z",
+        "sku": "ShirtsandBlouses_floralshirt_41.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "41.99",
+        "display_price": "$41.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "182",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "499",
+              "type": "product_property"
+            },
+            {
+              "id": "500",
+              "type": "product_property"
+            },
+            {
+              "id": "501",
+              "type": "product_property"
+            },
+            {
+              "id": "502",
+              "type": "product_property"
+            },
+            {
+              "id": "503",
+              "type": "product_property"
+            },
+            {
+              "id": "504",
+              "type": "product_property"
+            },
+            {
+              "id": "505",
+              "type": "product_property"
+            },
+            {
+              "id": "506",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "22",
+              "type": "taxon"
+            },
+            {
+              "id": "11",
+              "type": "taxon"
+            },
+            {
+              "id": "3",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "182",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "66",
+            "type": "variant"
+          }
+        }
+      }
+    },
+    {
+      "id": "74",
+      "type": "product",
+      "attributes": {
+        "name": "Knitted V Neck Sweater",
+        "description": "Eum aperiam qui modi molestiae nesciunt iusto. Vero qui reprehenderit iure aut voluptates. In fugiat non sequi neque excepturi.",
+        "available_on": "2021-10-02T11:02:26.556Z",
+        "slug": "knitted-v-neck-sweater",
+        "meta_description": null,
+        "meta_keywords": null,
+        "updated_at": "2021-10-02T11:03:13.911Z",
+        "sku": "Sweaters_knittedv-necksweater_30.99",
+        "purchasable": true,
+        "in_stock": true,
+        "backorderable": false,
+        "available": true,
+        "currency": "USD",
+        "price": "30.99",
+        "display_price": "$30.99",
+        "compare_at_price": null,
+        "display_compare_at_price": null
+      },
+      "relationships": {
+        "variants": {
+          "data": [
+            {
+              "id": "190",
+              "type": "variant"
+            }
+          ]
+        },
+        "option_types": {
+          "data": [
+            {
+              "id": "1",
+              "type": "option_type"
+            },
+            {
+              "id": "3",
+              "type": "option_type"
+            }
+          ]
+        },
+        "product_properties": {
+          "data": [
+            {
+              "id": "555",
+              "type": "product_property"
+            },
+            {
+              "id": "556",
+              "type": "product_property"
+            },
+            {
+              "id": "557",
+              "type": "product_property"
+            },
+            {
+              "id": "558",
+              "type": "product_property"
+            },
+            {
+              "id": "559",
+              "type": "product_property"
+            },
+            {
+              "id": "560",
+              "type": "product_property"
+            },
+            {
+              "id": "561",
+              "type": "product_property"
+            },
+            {
+              "id": "562",
+              "type": "product_property"
+            }
+          ]
+        },
+        "taxons": {
+          "data": [
+            {
+              "id": "12",
+              "type": "taxon"
+            },
+            {
+              "id": "21",
+              "type": "taxon"
+            },
+            {
+              "id": "3",
+              "type": "taxon"
+            }
+          ]
+        },
+        "images": {
+          "data": []
+        },
+        "default_variant": {
+          "data": {
+            "id": "190",
+            "type": "variant"
+          }
+        },
+        "primary_variant": {
+          "data": {
+            "id": "74",
+            "type": "variant"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "count": 25,
+    "total_count": 116,
+    "total_pages": 5,
+    "filters": {
+      "option_types": [
+        {
+          "id": 1,
+          "name": "color",
+          "presentation": "Color",
+          "option_values": [
+            {
+              "id": 4,
+              "name": "black",
+              "presentation": "#000000",
+              "position": 4
+            },
+            {
+              "id": 11,
+              "name": "mint",
+              "presentation": "#AAF0D1",
+              "position": 11
+            },
+            {
+              "id": 6,
+              "name": "green",
+              "presentation": "#228C22",
+              "position": 6
+            },
+            {
+              "id": 2,
+              "name": "purple",
+              "presentation": "#800080",
+              "position": 2
+            },
+            {
+              "id": 10,
+              "name": "beige",
+              "presentation": "#E1C699",
+              "position": 10
+            },
+            {
+              "id": 17,
+              "name": "pink",
+              "presentation": "#FFA6C9",
+              "position": 17
+            },
+            {
+              "id": 7,
+              "name": "grey",
+              "presentation": "#808080",
+              "position": 7
+            },
+            {
+              "id": 8,
+              "name": "orange",
+              "presentation": "#FF8800",
+              "position": 8
+            },
+            {
+              "id": 15,
+              "name": "yellow",
+              "presentation": "#FFFF00",
+              "position": 15
+            },
+            {
+              "id": 1,
+              "name": "white",
+              "presentation": "#FFFFFF",
+              "position": 1
+            },
+            {
+              "id": 13,
+              "name": "dark_blue",
+              "presentation": "#00008b",
+              "position": 13
+            },
+            {
+              "id": 19,
+              "name": "ecru",
+              "presentation": "#F4F2D6",
+              "position": 19
+            },
+            {
+              "id": 3,
+              "name": "red",
+              "presentation": "#FF0000",
+              "position": 3
+            },
+            {
+              "id": 12,
+              "name": "blue",
+              "presentation": "#0000FF",
+              "position": 12
+            },
+            {
+              "id": 16,
+              "name": "light_blue",
+              "presentation": "#add8e6",
+              "position": 16
+            },
+            {
+              "id": 9,
+              "name": "burgundy",
+              "presentation": "#A8003B",
+              "position": 9
+            },
+            {
+              "id": 14,
+              "name": "khaki",
+              "presentation": "#BDB76B",
+              "position": 14
+            },
+            {
+              "id": 5,
+              "name": "brown",
+              "presentation": "#8B4513",
+              "position": 5
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "length",
+          "presentation": "Length",
+          "option_values": [
+            {
+              "id": 20,
+              "name": "mini",
+              "presentation": "Mini",
+              "position": 1
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "size",
+          "presentation": "Size",
+          "option_values": [
+            {
+              "id": 23,
+              "name": "xs",
+              "presentation": "XS",
+              "position": 1
+            }
+          ]
+        }
+      ],
+      "product_properties": [
+        {
+          "id": 1,
+          "name": "manufacturer",
+          "presentation": "Manufacturer",
+          "values": [
+            {
+              "value": "Conditioned",
+              "filter_param": "conditioned"
+            },
+            {
+              "value": "Jerseys",
+              "filter_param": "jerseys"
+            },
+            {
+              "value": "Resiliance",
+              "filter_param": "resiliance"
+            },
+            {
+              "value": "Wannabe",
+              "filter_param": "wannabe"
+            },
+            {
+              "value": "Wilson",
+              "filter_param": "wilson"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "brand",
+          "presentation": "Brand",
+          "values": [
+            {
+              "value": "Alpha",
+              "filter_param": "alpha"
+            },
+            {
+              "value": "Beta",
+              "filter_param": "beta"
+            },
+            {
+              "value": "Delta",
+              "filter_param": "delta"
+            },
+            {
+              "value": "Epsilon",
+              "filter_param": "epsilon"
+            },
+            {
+              "value": "Gamma",
+              "filter_param": "gamma"
+            },
+            {
+              "value": "Theta",
+              "filter_param": "theta"
+            },
+            {
+              "value": "Zeta",
+              "filter_param": "zeta"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "links": {
+    "self": "http://localhost:3000/api/v2/storefront/products",
+    "next": "http://localhost:3000/api/v2/storefront/products?page=2",
+    "prev": "http://localhost:3000/api/v2/storefront/products?page=1",
+    "last": "http://localhost:3000/api/v2/storefront/products?page=5",
+    "first": "http://localhost:3000/api/v2/storefront/products?page=1"
+  }
+}
+```
+
+Returns a list of products for the current Store.
+
+### HTTP Request
+
+<code class="http-request">
+  <span class="http-method-get">GET</span>
+  <%= config[:domain] %>/api/v2/storefront/products
+</code>
+
+### Query Parameters
+
+| Parameter                     | Type     | Description                                                                                                                                                                               |
+|-------------------------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| fields[product]               | string   | Specify the fields you would like returned in the response body <br/> Examples: price,description,name                                                                                    |
+| filter[backorderable]         | boolean  | Returns only backorderable products <br/> Examples: true                                                                                                                                  |
+| filter[ids]                   | string   | Fetch only resources with corresponding IDs <br/> Examples: 1,2,3                                                                                                                         |
+| image_transformation[quality] | string   | Specifies quality for included images at transformed_url attribute <br/> Examples: 70                                                                                                     |
+| include                       | string   | pecify what related resources (relationships) you would like to receive in the response body <br/>  default_variant,variants,option_types,product_properties,taxons,images,primary_variant |
+| page                          | integer  | Number of requested page when paginating collection <br/> Examples: 1                                                                                                                     |
+| per_page                      | integer  | Number of requested records per page when paginating collection <br/> 25                                                                                                                  |
+| sort                          | string   | Sort products based on: <br/> <ul style="margin:0"> <li>name<br/>(ascending/descending)</li> <li>price<br/>(ascending/descending)</li> </ul>                                                                         |
+

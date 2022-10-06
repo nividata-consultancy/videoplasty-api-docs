@@ -1,0 +1,174 @@
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```shell
+curl --request GET \\
+  --url <%= config[:domain] %>/api/v2/storefront/products/knitted-high-neck-sweater \\
+  --header 'Content-Type: application/json'
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "id": "96",
+    "type": "product",
+    "attributes": {
+      "name": "Bomber Jacket",
+      "description": "Dolorem nulla odit nostrum placeat soluta non vitae praesentium. Neque asperiores quos necessitatibus sint placeat. Voluptas aliquid atque veniam iste assumenda blanditiis. Excepturi odit recusandae laboriosam sunt temporibus corrupti. Tempore necessitatibus recusandae eligendi occaecati nesciunt sed illum similique.",
+      "available_on": "2021-10-02T11:02:29.288Z",
+      "slug": "bomber-jacket",
+      "meta_description": null,
+      "meta_keywords": null,
+      "updated_at": "2021-10-02T11:03:14.681Z",
+      "sku": "JacketsandCoats_bomberjacket_38.99",
+      "purchasable": true,
+      "in_stock": true,
+      "backorderable": false,
+      "available": true,
+      "currency": "USD",
+      "price": "38.99",
+      "display_price": "$38.99",
+      "compare_at_price": null,
+      "display_compare_at_price": null
+    },
+    "relationships": {
+      "variants": {
+        "data": [
+          {
+            "id": "212",
+            "type": "variant"
+          }
+        ]
+      },
+      "option_types": {
+        "data": [
+          {
+            "id": "1",
+            "type": "option_type"
+          },
+          {
+            "id": "3",
+            "type": "option_type"
+          }
+        ]
+      },
+      "product_properties": {
+        "data": [
+          {
+            "id": "639",
+            "type": "product_property"
+          },
+          {
+            "id": "640",
+            "type": "product_property"
+          },
+          {
+            "id": "641",
+            "type": "product_property"
+          },
+          {
+            "id": "642",
+            "type": "product_property"
+          },
+          {
+            "id": "643",
+            "type": "product_property"
+          },
+          {
+            "id": "644",
+            "type": "product_property"
+          },
+          {
+            "id": "645",
+            "type": "product_property"
+          },
+          {
+            "id": "646",
+            "type": "product_property"
+          }
+        ]
+      },
+      "taxons": {
+        "data": [
+          {
+            "id": "19",
+            "type": "taxon"
+          },
+          {
+            "id": "14",
+            "type": "taxon"
+          },
+          {
+            "id": "24",
+            "type": "taxon"
+          },
+          {
+            "id": "3",
+            "type": "taxon"
+          }
+        ]
+      },
+      "images": {
+        "data": []
+      },
+      "default_variant": {
+        "data": {
+          "id": "212",
+          "type": "variant"
+        }
+      },
+      "primary_variant": {
+        "data": {
+          "id": "96",
+          "type": "variant"
+        }
+      }
+    }
+  }
+}
+```
+
+Returns Product details.
+
+### HTTP Request
+
+<code class="http-request">
+  <span class="http-method-get">GET</span>
+  <%= config[:domain] %>/api/v2/storefront/products/__{product_slug}__
+</code>
+
+### URL Parameters
+
+| Parameter      | Type       | Description                                                |
+|----------------|------------|------------------------------------------------------------|
+| product_slug   | string     | Product Slug <br/> Examples: knitted-high-neck-sweater     |
+
+
+### Query Parameters
+
+| Parameter                     | Type       | Description                                                                                                                                                                                            |
+|-------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| fields[product]               | string     | Specify the fields you would like returned in the response body. More information. <br/> Examples: price,description,name                                                                              |
+| image_transformation[quality] | string     | Specifies quality for included images at transformed_url attribute <br/> Examples: 70                                                                                                                  |
+| image_transformation[size]    | string     | Specifies dimensions for included images at transformed_url attribute. <br/> Examples: 100x50                                                                                                          |
+| include                       | string     | Specify what related resources (relationships) you would like to receive in the response body. <br/> Examples: default_variant,variants,option_types,product_properties,taxons,images,primary_variant  |

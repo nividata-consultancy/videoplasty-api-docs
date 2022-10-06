@@ -1,0 +1,52 @@
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```shell
+curl --request GET \\
+  --url https://demo.spreecommerce.org/api/v2/storefront/digitals/token \\
+  --header 'Content-Type: application/json'
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.delete(2);
+```
+
+> The above command returns the digital asset.
+
+This endpoint allows you to download a digital item using the unique digital_link token.
+
+The digital_link token value can be found by including line_items.digital_links in a completed order lookup.
+
+Use the Retrieve an Order Status endpoint found under the Order Status tab, or the Retrieve an Order endpoint found under the Account / Orders tab to perform a completed order lookup.
+
+Depending on the store that the item was purchased in, downloads may be restricted to a set number of days since the purchase was made. Additionally, the number of times a download link can be used may be restricted.
+
+If you are not authorized to perform the download due to the download limit restrictions mentioned above, a 403 response will be returned.
+
+### HTTP Request
+
+<code class="http-request">
+  <span class="http-method-get">GET</span>
+  <%= config[:domain] %>/api/v2/storefront/digitals/__{token}__
+</code>
+
+### URL Parameters
+
+| Parameter | Type   | Description                                                                 |
+|-----------|--------|-----------------------------------------------------------------------------|
+| token     | string | Use the token from the digital link <br/> Example: 4WaA5vjMbnivskav2rMPGKzt |
+
